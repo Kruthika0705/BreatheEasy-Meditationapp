@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meditation App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background-color: rgba(255, 255, 255, 0.85);
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    /* Background Video */
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Section Titles */
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Challenges */
+    .challenges-section {
+      max-width: 1000px;
+      margin: auto;
+      margin-bottom: 4rem;
+    }
+
+    .challenge-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .badge {
+      background-color: #9fd8cb;
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-bar {
+      background: #e0e0e0;
+      border-radius: 10px;
+      height: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: #60b99a;
+    }
+
+    .btn {
+      padding: 0.6rem 1rem;
+      background-color: #60b99a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #4aa888;
+    }
+
+    /* Sleep Better */
+    .container {
+      max-width: 400px;
+      margin: 4rem auto;
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    #breathCircle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #a0d5c4;
+      margin: 1.5rem auto;
+      transition: transform 4s ease-in-out;
+    }
+
+    #instruction {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      margin: 0.3rem;
+      background-color: #60b99a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #4cae8b;
+    }
+
+    /* Chatbot */
+    .chat-container {
+      max-width: 500px;
+      margin: 4rem auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-box {
+      flex: 1;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+
+    .message {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border-radius: 12px;
+      line-height: 1.4;
+    }
+
+    .user-message {
+      background-color: #dff5eb;
+      align-self: flex-end;
+    }
+
+    .bot-message {
+      background-color: #e9edf3;
+      align-self: flex-start;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .input-area input {
+      flex: 1;
+      padding: 0.7rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 🔊 Background Video -->
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="assets/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- ✨ Meditation Challenges -->
+  <div class="challenges-section">
+    <h2>✨ Customer Challenges</h2>
+    <div class="challenge-cards">
+      <div class="card">
+        <span class="badge">7 Days</span>
+        <h3>7-Day Calm Challenge</h3>
+        <p>Build a daily habit of calmness with 10-minute meditations each day.</p>
+        <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
+        <button class="btn">Continue</button>
+      </div>
+      <div class="card">
+        <span class="badge">14 Days</span>
+        <h3>Gratitude Reset</h3>
+        <p>Reflect and journal daily for emotional clarity and joy.</p>
+        <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
+        <button class="btn">Join Now</button>
+      </div>
+      <div class="card">
+        <span class="badge">30 Days</span>
+        <h3>Mindful Living</h3>
+        <p>Transform your daily life with mindfulness in action, thought & routine.</p>
+        <div class="progress-bar"><div class="progress-fill" style="width: 10%;"></div></div>
+        <button class="btn">Join Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🛌 Sleep Better -->
+  <div class="container">
+    <h1>🛌 Sleep Better</h1>
+    <div class="circle" id="breathCircle"></div>
+    <p id="instruction">Ready to relax?</p>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled>Stop</button>
+    <label>
+      <input type="checkbox" id="soundToggle"> Play Soothing Sound
+    </label>
+    <audio id="soothingSound" loop>
+      <source src="assets/calm_music.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    
+  </div>
+
+  <!-- 🌿 Chatbot -->
+  <div class="chat-container">
+    <h3>🌿 Your Meditation Buddy</h3>
+    <div class="chat-box" id="chatBox">
+      <div class="message bot-message">Hi! How are you feeling today?</div>
+    </div>
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Type your feeling or thoughts..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Breathing Animation
+    const startBtn = document.getElementById("startBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const breathCircle = document.getElementById("breathCircle");
+    const instruction = document.getElementById("instruction");
+
+    let breathingInterval;
+
+    startBtn.addEventListener("click", () => {
+      instruction.innerText = "Breathe in... 🌬️";
+      breathCircle.style.transform = "scale(1.5)";
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+
+      breathingInterval = setInterval(() => {
+        breathCircle.style.transform = breathCircle.style.transform === "scale(1.5)" ? "scale(1)" : "scale(1.5)";
+        instruction.innerText = instruction.innerText === "Breathe in... 🌬️" ? "Breathe out... 😌" : "Breathe in... 🌬️";
+      }, 4000);
+    });
+
+    stopBtn.addEventListener("click", () => {
+      clearInterval(breathingInterval);
+      breathCircle.style.transform = "scale(1)";
+      instruction.innerText = "Ready to relax?";
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+    });
+
+    // Chatbot
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const chatBox = document.getElementById("chatBox");
+      const userText = input.value.trim();
+
+      if (userText === "") return;
+
+      const userMsg = document.createElement("div");
+      userMsg.className = "message user-message";
+      userMsg.innerText = userText;
+      chatBox.appendChild(userMsg);
+
+      const botMsg = document.createElement("div");
+      botMsg.className = "message bot-message";
+      botMsg.innerText = getBotResponse(userText);
+      chatBox.appendChild(botMsg);
+
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function getBotResponse(input) {
+      input = input.toLowerCase();
+      if (input.includes("stressed") || input.includes("anxious")) {
+        return "I'm here for you. Try a 10-minute calming breath session 💆‍♀️";
+      } else if (input.includes("sad") || input.includes("low")) {
+        return "Sending you warmth 💛. A gratitude meditation could uplift you.";
+      } else if (input.includes("happy") || input.includes("great")) {
+        return "That's wonderful! Keep the energy going with an energizing flow ☀️";
+      } else if (input.includes("tired") || input.includes("exhausted")) {
+        return "Maybe a short body scan or sleep meditation would help you recharge 🛏️";
+      } else {
+        return "Thank you for sharing. Would you like a breathing or mindfulness practice today?";
+      }
+    }
+    const soundToggle = document.getElementById("soundToggle");
+    const soothingSound = document.getElementById("soothingSound");
+
+    soundToggle.addEventListener("change", function () {
+    if (this.checked) {
+    soothingSound.play();
+    } else {
+    soothingSound.pause();
+    }
+    });
+
+  </script>
+
+</body>
+</html>

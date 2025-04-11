@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meditate – BreatheEasy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">BreatheEasy</div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="meditate.html" class="active">Meditate</a></li>
+        <li><a href="stress.html">Reduce Stress</a></li>
+        <li><a href="relaxation.html">Relaxation</a></li>
+        <li><a href="videos.html">Videos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Discover Meditation Methods</h1>
+    <img src="assets/meditation2.jpeg"Meditation" class="hero-img">
+      <h1>🧘‍♀️ Let's Meditate Together</h1>
+      <div class="breathing-circle"></div>
+      <div id="timer-display">60s</div>
+      <button onclick="startBreathingTimer()">Start</button>
+      <button id="voice-btn">🎙 Voice Guide</button>
+      <button id="sound-btn">🎵 Relaxing Sound</button>
+      <button id="dark-mode-toggle">🌓 Toggle Dark Mode</button>
+    </section>
+  
+    <section class="info">
+      <h2>📈 Your Progress</h2>
+      <p id="progress-status">You have meditated 0 times</p>
+    </section>
+  
+    <section class="info">
+      <h2>🔔 Daily Mindfulness Reminder</h2>
+      <button onclick="requestReminder()">Enable Daily Reminder</button>
+    </section>
+
+
+
+  </section>
+  <section class="methods">
+    <div class="method">
+      <h2>🌬️ Breathing Exercises</h2>
+      <p>Follow this guided breathing method to calm your mind:</p>
+      <ul>
+        <li>Inhale deeply for 4 seconds</li>
+        <li>Hold your breath for 7 seconds</li>
+        <li>Exhale slowly for 8 seconds</li>
+        <li>Repeat for 5 cycles</li>
+      </ul>
+
+      <!-- Breathing Animation -->
+      <div class="breathing-circle"></div>
+      <p class="breathe-instruction">Breathe in... Hold... Breathe out...</p>
+    </div>
+
+    <div class="method">
+      <h2>🎵 Sound Meditation</h2>
+      <p>Use soothing sounds or mantras to focus and relax:</p>
+      <ul>
+        <li>Play nature sounds, calming music, or chants</li>
+        <li>Focus your attention on the sound alone</li>
+        <li>If distracted, gently return to the sound</li>
+      </ul>
+      <audio controls>
+        <source src="assets/calm_music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="method">
+      <h2>🎨 Visualization</h2>
+      <p>Close your eyes and imagine peaceful scenes like:</p>
+      <ul>
+        <li>A quiet beach with waves gently rolling</li>
+        <li>A forest with birds chirping</li>
+        <li>A warm glowing light enveloping you</li>
+      </ul>
+    
+      <div class="video-gallery">
+        <video controls>
+          <source src="assets/beach.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    
+        <video controls>
+          <source src="assets/birds.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    
+        <video controls>
+          <source src="assets/green.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    
+        <video controls>
+          <source src="assets/calm.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    
+    
+    <div class="method">
+      <h2>✨ Guided Meditation</h2>
+      <p>Use voice-guided sessions to walk through calming scenarios:</p>
+      <ul>
+        <li>Helps beginners stay focused</li>
+        <li>Available through apps, videos, or audio clips</li>
+      </ul>
+      <a href="https://www.youtube.com/results?search_query=guided+meditation" target="_blank">Watch Guided Sessions</a>
+    </div>
+  </section>
+
+  <script src="script2.js"></script>
+  <audio id="relaxing-audio">
+    <source src="assets/calm_music.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  
+</body>
+</html>

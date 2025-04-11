@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | BreatheEasy</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<style>
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #cfe9dc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c6e49;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #2c6e49;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #14532d;
+  border-bottom: 2px solid #2c6e49;
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 80px;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.about-text {
+  flex: 1 1 60%;
+  padding-right: 30px;
+}
+
+.about-text h1 {
+  color: #2c6e49;
+  margin-bottom: 20px;
+}
+
+.about-text h2 {
+  color: #14532d;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about-text ul {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.about-text li {
+  margin-bottom: 8px;
+}
+
+.about-image {
+  flex: 1 1 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #cfe9dc;
+  color: #2c6e49;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .about-text {
+    padding-right: 0;
+  }
+
+  .about-image {
+    margin-top: 30px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>
+
+<body>
+  <header>
+    <div class="logo">BreatheEasy</div>
+    <nav>
+      <ul>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="meditate.html">Meditate</a></li>
+        <li><a href="stress.html">Reduce Stress</a></li>
+        <li><a href="relaxation.html">Relaxation</a></li>
+        <li><a href="videos.html">Videos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="about-container">
+    <div class="about-text">
+      <h1>About BreatheEasy</h1>
+      <p>
+        <strong>BreatheEasy</strong> is a wellness platform designed to help you find peace, reduce stress, and practice mindfulness through guided meditation, calming exercises, and simple mindful habits.
+      </p>
+
+      <h2>🌟 Our Mission</h2>
+      <p>
+        Our mission is to make meditation and mental wellness accessible and easy for everyone. Whether you're just starting or already on your mindfulness journey, we’re here to support you every breath of the way.
+      </p>
+
+      <h2>💖 Why We Created BreatheEasy</h2>
+      <p>
+        In today’s fast-paced world, it’s easy to feel overwhelmed. BreatheEasy was built to be a gentle reminder that peace is always just a breath away. Our team believes that with a little guidance, anyone can tap into the calm within.
+      </p>
+
+      <h2>👨‍💻 Meet the Creators</h2>
+      <ul>
+        <li>🧘 Meditation coach passionate about mental well-being</li>
+        <li>🎨 A designer who loves creating calming user experiences</li>
+        <li>👨‍💻 A developer dedicated to building helpful wellness tools</li>
+      </ul>
+
+      <p><em>Take a deep breath and explore your inner calm with us.</em> 🌬️</p>
+    </div>
+
+    <div class="about-image">
+      <img src="assets/about.jpeg"Peaceful meditation">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BreatheEasy. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Videos - BreatheEasy</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .video-categories {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 20px 0;
+      flex-wrap: wrap;
+    }
+    .video-categories button {
+      padding: 10px 20px;
+      background-color: #81c784;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .video-categories button.active,
+    .video-categories button:hover {
+      background-color: #388e3c;
+    }
+    .videos {
+      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .video-container {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">BreatheEasy</div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="meditate.html">Meditate</a></li>
+        <li><a href="stress.html">Reduce Stress</a></li>
+        <li><a href="relaxation.html">Relaxation</a></li>
+        <li><a href="videos.html" class="active">Videos</a></li>
+        <li><a href="medicalbuddy.html">MedicalBuddy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>🎧 Watch & Relax</h1>
+    <p>Select a category to explore guided meditations and calming music.</p>
+  </section>
+
+  <!-- Category Buttons -->
+  <div class="video-categories">
+    <button class="category-btn active" data-category="all">All</button>
+    <button class="category-btn" data-category="sleep">Sleep</button>
+    <button class="category-btn" data-category="stress">Stress Relief</button>
+    <button class="category-btn" data-category="focus">Focus</button>
+  </div>
+
+  <!-- Video Grid -->
+  <section class="videos">
+    <div class="video-container" data-category="sleep">
+      <iframe src="https://www.youtube.com/embed/32q9rlK1q3s" title="Deep Sleep Meditation" allowfullscreen></iframe>
+    </div>
+    <div class="video-container" data-category="sleep">
+      <iframe src="https://www.youtube.com/embed/LWGSwfchz_A" title="Peaceful sleep"allowfullscreen></iframe>
+    </div> 
+    <div class="video-container" data-category="stress">
+      <iframe src="https://www.youtube.com/embed/inpok4MKVLM" title="5-Minute Stress Relief" allowfullscreen></iframe>
+    </div>
+    <div class="video-container" data-category="focus">
+      <iframe src="https://www.youtube.com/embed/z6X5oEIg6Ak" title="Focus Meditation Music" allowfullscreen></iframe>
+    </div>
+    <div class="video-container" data-category="stress">
+      <iframe src="https://www.youtube.com/embed/MIr3RsUWrdo" title="Mindfulness for Anxiety" allowfullscreen></iframe>
+    </div>
+    <div class="video-container" data-category="focus">
+      <iframe src="https://www.youtube.com/embed/4pLUleLdwY4" title="Box Breathing Guide" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <script src="script1.js"></script>
+</body>
+</html>

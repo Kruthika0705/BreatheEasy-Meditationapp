@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BreatheEasy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Popup styles */
+    .modal, .second-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .modal-content, .second-modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    input, select, button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .close-btn {
+      background-color: #f44336;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Header -->
+  <header>
+    <div class="logo">BreatheEasy</div>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="openModal()">Login / Signup</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="meditate.html">Meditate</a></li>
+        <li><a href="stress.html">Reduce Stress</a></li>
+        <li><a href="relaxation.html">Relaxation</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="medicalbuddy.html">MedicalBuddy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ✅ Hero Section -->
+  <section class="hero">
+    <h1>Feel calm, better, relax through <span>BreatheEasy</span></h1>
+    <img src="assets/meditation-image.jpeg" alt="Meditation" class="hero-img">
+  </section>
+
+  <!-- ✅ Info Section -->
+  <section class="info">
+    <h2>🧘‍♂️ What is Meditation?</h2>
+    <p>Meditation helps train your awareness and attention. It's your personal reset button!</p>
+
+    <h2>✨<h2>Benefits</h2>
+    <ul>
+      <li>🌈 <strong>Less Stress & Anxiety:</strong> Experience a calmer mind and reduced overwhelm as you adopt healthier habits and mindful practices that help ease daily tensions.</li>
+      <li>🧠 <strong>Better Focus & Sleep:</strong> Improve your concentration and enjoy deeper, more restful sleep by balancing your lifestyle and tuning into your body’s natural rhythms.</li>
+      <li>💪 <strong>Boosted Mental Clarity:</strong> Clear the mental fog and think more clearly with strategies designed to sharpen your mind and support cognitive health.</li>
+    </ul>
+    
+
+    <h2>🚀 Getting Started</h2>
+    <ol>
+      <li>Find a quiet space</li>
+      <li>Take deep breaths</li>
+      <li>Focus on your inhale and exhale</li>
+    </ol>
+  </section>
+
+  <!-- ✅ Signup Modal (Hidden by default) -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <h2>👋 Welcome! Let's Sign You Up</h2>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <input type="password" id="password" placeholder="Create Password" required>
+      <button onclick="showNextModal()">Next ➡️</button>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- ✅ Additional Info Modal (Also hidden by default) -->
+  <div class="second-modal" id="detailsModal">
+    <div class="second-modal-content">
+      <h2>Just a few more things...</h2>
+      <input type="number" placeholder="Your Age">
+      <select>
+        <option>Select Meditation Goal</option>
+        <option>Stress Relief</option>
+        <option>Better Sleep</option>
+        <option>Focus & Productivity</option>
+      </select>
+      <input type="text" placeholder="Favorite Time to Meditate (e.g. Morning)">
+      <button onclick="submitDetails()">Submit ✅</button>
+      <button class="close-btn" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- ✅ Script -->
+  <script>
+    function openModal() {
+      document.getElementById('signupModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('signupModal').style.display = 'none';
+      document.getElementById('detailsModal').style.display = 'none';
+    }
+
+    function showNextModal() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      if (name && email) {
+        document.getElementById('signupModal').style.display = 'none';
+        document.getElementById('detailsModal').style.display = 'flex';
+      } else {
+        alert("Please fill in your name and email to proceed.");
+      }
+    }
+
+    function submitDetails() {
+      alert("Thank you for joining BreatheEasy! 🌿");
+      closeModal();
+    }
+  </script>
+
+</body>
+</html>
